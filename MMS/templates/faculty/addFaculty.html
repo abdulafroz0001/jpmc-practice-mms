@@ -1,0 +1,98 @@
+
+{% extends 'base.html' %}
+
+{% block css %}
+
+    <style>
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+
+        }
+        .register-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30vw;
+            margin-left: 33vw;
+            margin-top: 3vw;
+        }
+
+        .register-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .register-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .form-control {
+            border-radius: 25px;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+        }
+
+        .btn-primary {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #004080;
+            border-color: #004080;
+        }
+
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-link:hover {
+            color: #0056b3;
+        }
+    </style>
+    {% endblock %}
+
+    {% block body %}
+
+    <div class="register-container">
+        <div class="register-header">
+            <h1>Add Faculty</h1>
+        </div>
+        <form>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="studName" placeholder="Faculty Name" required>
+            </div>
+            <div class="mb-3">
+                <input type="number" class="form-control" id="studAge" placeholder="Faculty Age" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="studEmail" placeholder="Faculty Email" required>
+            </div>
+            <div class="mb-3">
+                <input type="tel" class="form-control" id="studPhone" placeholder="Faculty Phone" required>
+            </div>
+            <div class="mb-3">
+                <select class="form-control" id="courseDept" required>
+                    <option value="" disabled selected>Select Department</option>
+                    <!-- Assuming you'll populate these options dynamically with your department data -->
+                    <option value="1">Department 1</option>
+                    <option value="2">Department 2</option>
+                    <option value="3">Department 3</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% endblock %}

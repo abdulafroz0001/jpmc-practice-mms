@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block css %}
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .jumbotron {
+            background-color: #007bff;
+            color: white;
+            padding: 100px 0;
+            border-radius: 0;
+            text-align: center;
+        }
+
+        .jumbotron h1 {
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .jumbotron p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+        }
+
+        .btn-primary:hover {
+            background-color: #004080;
+            border-color: #004080;
+        }
+
+        .features {
+            padding: 80px 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .feature-description {
+            font-size: 1.1rem;
+            color: #666666;
+        }
+    </style>
+    {% endblock %}
+
+
+
+    {% block body %}
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Marks Management System</h1>
+            <p>Welcome to the Marks Management System. Manage and track student marks efficiently.</p>
+            <a class="btn btn-primary btn-lg" href="accounts/login" role="button">Get Started</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-icon"><i class="bi bi-people"></i></div>
+                    <h3 class="feature-title">Easy to Use</h3>
+                    <p class="feature-description">Intuitive interface for effortless management of student marks and information.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon"><i class="bi bi-lock"></i></div>
+                    <h3 class="feature-title">Secure</h3>
+                    <p class="feature-description">Your data is safe with us. We use advanced security measures to protect your information.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon"><i class="bi bi-graph-up"></i></div>
+                    <h3 class="feature-title">Analytics</h3>
+                    <p class="feature-description">Track student progress, generate reports, and gain valuable insights with our analytics tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+

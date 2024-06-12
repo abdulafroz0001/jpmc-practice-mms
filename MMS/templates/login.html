@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30vw;
+            margin-left: 33vw;
+            margin-top: 8vw;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .form-control {
+            border-radius: 25px;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+        }
+
+        .btn-primary {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #004080;
+            border-color: #004080;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            color: #0056b3;
+        }
+    </style>
+
+    {% endblock %}
+
+
+{% block body %}
+
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Login</h1>
+        </div>
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="forgot-password" class="forgot-password">Forgot your password?</a>
+            <a href="register" class="forgot-password">Create a New Account</a>
+        </form>
+    </div>
+
+{% endblock %}
