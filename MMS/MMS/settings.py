@@ -83,7 +83,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hackathon',
         'USER': 'root',
+<<<<<<< HEAD
+        'PASSWORD': 'root',
+=======
         'PASSWORD': 'Sree@2022',
+>>>>>>> 836f1f0fc84bb1bbc58676c1daafe6f77a7c4f94
         'HOST': 'localhost',  # or the hostname where your MySQL server is running
         'PORT': '3306',      # or the port on which your MySQL server is listening
     }
