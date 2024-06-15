@@ -1,13 +1,11 @@
-
 {% extends 'base.html' %}
 
 {% block css %}
 
     <style>
-         body {
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f0f0;
-
         }
         .register-container {
             background-color: #ffffff;
@@ -18,24 +16,21 @@
             margin-left: 33vw;
             margin-top: 3vw;
         }
-
         .register-header {
             text-align: center;
             margin-bottom: 30px;
         }
-
         .register-header h1 {
             font-size: 2rem;
             font-weight: 700;
             color: #333333;
         }
-
         .form-control {
             border-radius: 25px;
             margin-bottom: 20px;
             padding: 10px 20px;
+            
         }
-
         .btn-primary {
             background-color: #0056b3;
             border-color: #0056b3;
@@ -44,12 +39,10 @@
             border-radius: 25px;
             width: 100%;
         }
-
         .btn-primary:hover {
             background-color: #004080;
             border-color: #004080;
         }
-
         .login-link {
             display: block;
             text-align: center;
@@ -57,43 +50,40 @@
             color: #007bff;
             text-decoration: none;
         }
-
         .login-link:hover {
             color: #0056b3;
         }
     </style>
-    {% endblock %}
+{% endblock %}
 
-    {% block body %}
-
+{% block body %}
     <div class="register-container">
         <div class="register-header">
             <h1>Add Student</h1>
         </div>
-        <form>
+        <form method="post">
+            {% csrf_token %}
             <div class="mb-3">
-                <input type="text" class="form-control" id="studName" placeholder="Student Name" required>
+                <input type="text" name="stud_name" class="form-control" id="studName" placeholder="Student Name" required>
             </div>
             <div class="mb-3">
-                <input type="number" class="form-control" id="studAge" placeholder="Student Age" required>
+                <input type="number" name="stud_age" class="form-control" id="studAge" placeholder="Student Age" required>
             </div>
             <div class="mb-3">
-                <input type="email" class="form-control" id="studEmail" placeholder="Student Email" required>
+                <input type="email" name="stud_email" class="form-control" id="studEmail" placeholder="Student Email" required>
             </div>
             <div class="mb-3">
-                <input type="tel" class="form-control" id="studPhone" placeholder="Student Phone" required>
+                <input type="tel" name="stud_phone" class="form-control" id="studPhone" placeholder="Student Phone" required>
             </div>
             <div class="mb-3">
-                <select class="form-control" id="courseDept" required>
-                    <option value="" disabled selected>Select Department</option>
-                    <!-- Assuming you'll populate these options dynamically with your department data -->
-                    <option value="1">Department 1</option>
-                    <option value="2">Department 2</option>
-                    <option value="3">Department 3</option>
-                    <option value="3">Department 4</option>
+                <select name="stud_dept" class="form-control" id="courseDept" required>
+                    <option  value="" disabled selected>Select Department</option>
+                    {% for department in departments %}
+                        <option style="color: #007bff;"value="{{ department.dept_id }}">{{ department.dept_name }}</option>
+                    {% endfor %}
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    {% endblock %}
+{% endblock %}

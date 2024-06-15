@@ -81,19 +81,12 @@ WSGI_APPLICATION = "MMS.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-<<<<<<< HEAD
+
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST', default='localhost'),
         'PORT': config('DB_PORT', default='3306'),
-=======
-        'NAME': 'hackathon',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',  # or the hostname where your MySQL server is running
-        'PORT': '3306',      # or the port on which your MySQL server is listening
->>>>>>> 999257933282fffdeeefaa4a933803136b4a50d0
     }
 }
 
