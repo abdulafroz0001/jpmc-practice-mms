@@ -5,12 +5,17 @@ class Department(models.Model):
     dept_name= models.CharField(max_length=100)
     dept_email= models.CharField(max_length=100, blank=True)
 
+    def __str__(self):
+        return self.dept_name
+
 class Course(models.Model):
     course_id= models.AutoField(primary_key=True)
     course_name=models.CharField(max_length=100)
     course_credits= models.FloatField()
     course_dept= models.ForeignKey(Department, related_name="courseDept",on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.course_name
 
 class Student(models.Model):
     stud_id= models.AutoField(primary_key=True)
@@ -20,6 +25,9 @@ class Student(models.Model):
     stud_phone = models.BigIntegerField()
     stud_dept= models.ForeignKey(Department, related_name="studentDept",on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.stud_name
+    
 class Faculty(models.Model):
     fac_id= models.AutoField(primary_key=True)
     fac_name=models.CharField(max_length=100)
@@ -28,5 +36,7 @@ class Faculty(models.Model):
     fac_phone = models.BigIntegerField()
     fac_dept= models.ForeignKey(Department, related_name="facultyDept",on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.fac_name
 
 

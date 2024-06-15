@@ -36,4 +36,9 @@ urlpatterns = [
     #Student routes ------------------------------------------------------------------------------------------------------
     path('addStudent',views.addStudent,name='add-student'),
 
+
+    #Admin routes --------------------------------------------------------------------------------------------------------
+
+    path('adminDashboard',views.adminDashboard,name='admin-dashboard'),
+
 ]

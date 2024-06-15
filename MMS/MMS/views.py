@@ -35,3 +35,9 @@ def addStudent(request):
     if request.method == 'POST':
         return render(request, 'student/addStudent.html')
     return render(request, 'student/addStudent.html')
+
+
+#admin views ------------------------------------------------------------------------------------------------------
+
+def adminDashboard(request):
+    return render(request, 'admin/adminDashboard.html')
