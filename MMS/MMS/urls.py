@@ -23,8 +23,9 @@ urlpatterns = [
     path('dashboard',views.dashboard,name='dashboard'),
     #Department routes ---------------------------------------------------------------------------------------------------
     path('addDepartment',views.addDepartment,name='add-department'),
-
-
+    path('viewDepartment',views.viewDepartment,name='view-department'),
+    path('delDepartment/<dept_id>',views.delDepartment,name='delDepartment'),
+    path('updateDepartment/<dept_id>',views.updateDepartment,name='updateDepartment'),
     #Course routes -------------------------------------------------------------------------------------------------------
     path('addCourse',views.addCourse,name='add-course'),
 
@@ -42,6 +43,6 @@ urlpatterns = [
 
     #Admin routes --------------------------------------------------------------------------------------------------------
 
-    path('adminDashboard',views.adminDashboard,name='admin-dashboard'),
+    # path('adminDashboard',views.adminDashboard,name='admin-dashboard'),
 
 ]
