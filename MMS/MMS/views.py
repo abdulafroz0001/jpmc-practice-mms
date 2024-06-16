@@ -81,6 +81,10 @@ def addStudent(request):
         stud_phone = request.POST.get('stud_phone')
         stud_dept_id = request.POST.get('stud_dept')
         stud_deptment = models.Department.objects.filter(dept_id=stud_dept_id)[0]
+        stud=models.Student.objects.filter(stud_name=stud_name)
+        if stud.exists():
+            messages.error(request, "student already present")
+            return redirect('/addStudent') 
         models.Student.objects.create(
                 stud_name=stud_name,
                 stud_age=int(stud_age),
@@ -88,7 +92,7 @@ def addStudent(request):
                 stud_phone=int(stud_phone),
                 stud_dept=stud_deptment
             )
-            
+        messages.success(request, "student added successfully")
         return redirect('/addStudent')  # Redirect to a page showing the list of students or a success page
 
     departments = models.Department.objects.all()
