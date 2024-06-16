@@ -34,7 +34,10 @@ urlpatterns = [
 
 
     #Student routes ------------------------------------------------------------------------------------------------------
-    path('addStudent',views.addStudent,name='add-student'),
+    path('addStudent/',views.addStudent,name='add-student'),
+    path('students/', views.listStudents, name='list_students'),
+    path('edit_student/<int:stud_id>/', views.edit_student, name='edit_student'),
+    path('delete_student/<int:stud_id>/', views.delete_student, name='delete_student'),
 
 
     #Admin routes --------------------------------------------------------------------------------------------------------

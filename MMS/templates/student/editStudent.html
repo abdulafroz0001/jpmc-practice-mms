@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50vw;
+            margin: 20px auto;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="form-container">
+        <h2>Edit Student</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="stud_name">Name:</label>
+                <input type="text" id="stud_name" name="stud_name" value="{{ student.stud_name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="stud_age">Age:</label>
+                <input type="number" id="stud_age" name="stud_age" value="{{ student.stud_age }}" required>
+            </div>
+            <div class="form-group">
+                <label for="stud_email">Email:</label>
+                <input type="email" id="stud_email" name="stud_email" value="{{ student.stud_email }}" required>
+            </div>
+            <div class="form-group">
+                <label for="stud_phone">Phone:</label>
+                <input type="text" id="stud_phone" name="stud_phone" value="{{ student.stud_phone }}" required>
+            </div>
+            <div class="form-group">
+                <label for="stud_dept">Department:</label>
+                <input type="text" id="stud_dept" name="stud_dept" value="{{ student.stud_dept.dept_name }}" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Update Student</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
