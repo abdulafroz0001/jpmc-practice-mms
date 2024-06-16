@@ -40,4 +40,9 @@ urlpatterns = [
     path('edit_student/<int:stud_id>/', views.edit_student, name='edit_student'),
     path('delete_student/<int:stud_id>/', views.delete_student, name='delete_student'),
 
+
+    #Admin routes --------------------------------------------------------------------------------------------------------
+
+    path('adminDashboard',views.adminDashboard,name='admin-dashboard'),
+
 ]
