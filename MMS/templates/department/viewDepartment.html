@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .list-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80vw;
+            margin: 20px auto;
+        }
+        .list-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .list-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333333;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .table th, .table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .table th {
+            background-color: #f5f5f5;
+            font-weight: 700;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="list-container">
+        <div class="list-header">
+            <h1>Department List</h1>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Department Name</th>
+                    
+                    <th>Department Email</th>
+                    <th>Actions</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for dept in departments %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ dept.dept_name }}</td>
+                        
+                        <td>{{ dept.dept_email }}</td>
+
+                        <td><a href="/delDepartment/{{dept.dept_id}}" class="btn btn-danger">delete 
+                            <a href="/updateDepartment/{{dept.dept_id}}" class="btn btn-success">update</td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
