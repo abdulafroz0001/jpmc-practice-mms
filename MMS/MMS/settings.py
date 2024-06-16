@@ -81,7 +81,6 @@ WSGI_APPLICATION = "MMS.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
@@ -90,8 +89,6 @@ DATABASES = {
 
     }
 }
-
-
 
 
 # Password validation
