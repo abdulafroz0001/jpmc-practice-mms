@@ -89,7 +89,7 @@ def addStudent(request):
                 stud_dept=stud_deptment
             )
             
-        return redirect('/students')  # Redirect to a page showing the list of students or a success page
+        return redirect('/addStudent')  # Redirect to a page showing the list of students or a success page
 
     departments = models.Department.objects.all()
     
