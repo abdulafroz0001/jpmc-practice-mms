@@ -43,6 +43,6 @@ urlpatterns = [
 
     #Admin routes --------------------------------------------------------------------------------------------------------
 
-    # path('adminDashboard',views.adminDashboard,name='admin-dashboard'),
+    path('adminDashboard',views.adminDashboard,name='admin-dashboard'),
 
 ]

@@ -120,3 +120,7 @@ def delete_student(request, stud_id):
         student.delete()
         return redirect('list_students')
     return render(request, 'student/deleteStudent.html', {'student': student})
+
+# admin views ---------------------------------------------------------------------------------------------------
+def adminDashboard(request):
+    return render(request, 'admin/adminDashboard.html')
